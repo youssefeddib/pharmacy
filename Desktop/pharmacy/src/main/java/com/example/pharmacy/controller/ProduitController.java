@@ -32,3 +32,10 @@ public class ProduitController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PutMapping("/{id}")
+    public Produit updateProduit(@PathVariable Long id,  @RequestBody Produit produit) {
+        return produitService.updateProduit(id, produit);
+    }
+
+
+}
